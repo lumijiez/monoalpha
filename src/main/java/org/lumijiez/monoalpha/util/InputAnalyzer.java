@@ -1,4 +1,4 @@
-package org.lumijiez.monoalpha;
+package org.lumijiez.monoalpha.util;
 
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.XYChart;
@@ -28,7 +28,7 @@ public class InputAnalyzer {
                 .collect(Collectors.toList());
     }
 
-    static void updateBarChart(BarChart<String, Integer> barChart, List<XYChart.Data<String, Integer>> data) {
+    public static void updateBarChart(BarChart<String, Integer> barChart, List<XYChart.Data<String, Integer>> data) {
         barChart.getData().clear();
         XYChart.Series<String, Integer> series = new XYChart.Series<>();
 

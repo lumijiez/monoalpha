@@ -1,4 +1,4 @@
-package org.lumijiez.monoalpha;
+package org.lumijiez.monoalpha.util;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -21,10 +21,7 @@ public class CharacterSwitcher {
         StringBuilder result = new StringBuilder();
 
         for (char c : text.toCharArray()) {
-            char newChar = c;
-            while (ruleMap.containsKey(newChar)) {
-                newChar = ruleMap.get(newChar);
-            }
+            char newChar = ruleMap.getOrDefault(c, c);
             result.append(newChar);
         }
 
