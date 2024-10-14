@@ -4,161 +4,168 @@
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.TextFlow?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url(https://i.ibb.co/mRZkK7v/Pngtree-wrinkled-polyethylene-film-cling-film-7266284.png); -fx-padding: 10; -fx-background-repeat: no-repeat; -fx-background-size: cover;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.lumijiez.monoalpha.MainController">
-  <columnConstraints>
-    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="80" prefWidth="100.0" />
-    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="20" prefWidth="100.0" />
-  </columnConstraints>
-  <rowConstraints>
-    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-  </rowConstraints>
-   <children>
-      <GridPane>
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-padding: 10; -fx-background-repeat: no-repeat; -fx-background-size: cover;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.lumijiez.monoalpha.MainController">
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="100.0" prefWidth="100.0" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    </rowConstraints>
+    <GridPane>
         <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
         <rowConstraints>
-          <RowConstraints minHeight="10.0" percentHeight="30" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" percentHeight="70" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" percentHeight="30" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" percentHeight="70" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
-         <children>
-            <GridPane>
-              <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="15.0" percentWidth="15" prefWidth="100.0" />
+        <GridPane>
+            <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-              </columnConstraints>
-              <rowConstraints>
+            </columnConstraints>
+            <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
-               <children>
-                  <BarChart fx:id="barChart" alternativeColumnFillVisible="true" legendSide="TOP" legendVisible="false" opacity="0.85" GridPane.columnIndex="1">
-                    <xAxis>
-                      <CategoryAxis side="BOTTOM" />
-                    </xAxis>
-                    <yAxis>
-                      <NumberAxis side="LEFT" tickLabelFill="WHITE">
-                           <tickLabelFont>
-                              <Font name="Copperplate Gothic Light" size="18.0" />
-                           </tickLabelFont></NumberAxis>
-                    </yAxis>
-                  </BarChart>
-                  <GridPane>
+            </rowConstraints>
+            <BarChart fx:id="barChart" alternativeRowFillVisible="false" horizontalGridLinesVisible="false" horizontalZeroLineVisible="false" legendSide="TOP" style="-fx-bar-gap: 0; -fx-category-gap: 3px; -fx-vertical-grid-lines-visible: false; -fx-horizontal-grid-lines-visible: false;" verticalGridLinesVisible="false" verticalZeroLineVisible="false">
+                <xAxis>
+                    <CategoryAxis side="BOTTOM" />
+                </xAxis>
+                <yAxis>
+                    <NumberAxis side="LEFT" />
+                </yAxis>
+            </BarChart>
+        </GridPane>
+        <GridPane hgap="5.0" style="-fx-padding: 5; -fx-border-insets: 5; -fx-background-insets: 5;" GridPane.rowIndex="1">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="20" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="20" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+           <GridPane>
+               <columnConstraints>
+                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                   <RowConstraints minHeight="10.0" percentHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                   <RowConstraints minHeight="10.0" percentHeight="90.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               <RowConstraints minHeight="10.0" percentHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Encrypted Input">
+                   <font>
+                       <Font name="SansSerif Regular" size="22.0" />
+                   </font>
+               </Label>
+               <TextArea fx:id="inputArea" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onInputMethodTextChanged="#analyzeText" opacity="0.85" prefHeight="200.0" prefWidth="200.0" promptText="Input encrypted text..." wrapText="true" GridPane.rowIndex="1">
+                   <font>
+                       <Font name="SansSerif Regular" size="14.0" />
+                   </font>
+               </TextArea>
+            <CheckBox fx:id="rainbowCheckbox" mnemonicParsing="false" text="Randomize Colors" GridPane.rowIndex="2">
+               <font>
+                  <Font name="SansSerif Regular" size="12.0" />
+               </font>
+            </CheckBox>
+           </GridPane>
+            <GridPane GridPane.columnIndex="1">
+                <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints minHeight="10.0" percentHeight="40.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                </rowConstraints>
+                <GridPane GridPane.rowIndex="1">
                     <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                     </columnConstraints>
                     <rowConstraints>
-                      <RowConstraints minHeight="10.0" percentHeight="20" prefHeight="30.0" vgrow="SOMETIMES" />
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" percentHeight="15.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" percentHeight="20.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" percentHeight="70.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
-                     <children>
-                        <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="F(X) -&gt; Y">
-                           <font>
-                              <Font name="Copperplate Gothic Bold" size="12.0" />
-                           </font></Label>
-                        <TextArea fx:id="ruleArea" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" opacity="0.85" prefHeight="200.0" prefWidth="200.0" promptText="a &gt; C;  G &gt; g;" wrapText="true" GridPane.rowIndex="1">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </TextArea>
-                     </children>
-                  </GridPane>
-               </children>
-            </GridPane>
-            <GridPane style="-fx-padding: 5; -fx-border-insets: 5; -fx-background-insets: 5;" GridPane.rowIndex="1">
-              <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="75" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
-               <children>
-                  <GridPane prefHeight="280.0" prefWidth="263.0" style="-fx-background-insets: 5; -fx-border-insets: 5; -fx-padding: 5;" GridPane.columnIndex="1">
-                    <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                    </columnConstraints>
-                    <rowConstraints>
-                        <RowConstraints minHeight="10.0" percentHeight="10" prefHeight="30.0" vgrow="SOMETIMES" />
-                      <RowConstraints minHeight="10.0" percentHeight="10" prefHeight="30.0" vgrow="SOMETIMES" />
-                      <RowConstraints minHeight="10.0" percentHeight="10" prefHeight="30.0" vgrow="SOMETIMES" />
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                    </rowConstraints>
-                     <children>
-                        <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Pattern Matcher">
-                           <font>
-                              <Font name="Copperplate Gothic Bold" size="16.0" />
-                           </font>
-                        </Label>
-                        <TextField fx:id="patternInput" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" promptText="Any word..." GridPane.rowIndex="1">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
+                    <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Pattern Matcher">
+                        <font>
+                            <Font name="SansSerif Regular" size="22.0" />
+                        </font>
+                    </Label>
+                    <TextArea fx:id="patternOutput" editable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" opacity="0.85" prefHeight="55.0" prefWidth="113.0" wrapText="true" GridPane.rowIndex="2">
+                        <font>
+                            <Font name="SansSerif Regular" size="18.0" />
+                        </font>
+                    </TextArea>
+                    <GridPane GridPane.rowIndex="1">
+                        <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="70.0" prefWidth="100.0"/>
+                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" percentWidth="30.0"
+                                               prefWidth="100.0"/>
+                        </columnConstraints>
+                        <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        </rowConstraints>
+                        <TextField fx:id="patternInput" maxWidth="1.7976931348623157E308" promptText="Any word...">
+                            <font>
+                                <Font size="18.0"/>
+                            </font>
                         </TextField>
-                        <Button fx:id="patternButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Search" GridPane.rowIndex="2" />
-                        <TextArea fx:id="patternOutput" editable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" opacity="0.85" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.rowIndex="3">
-                           <font>
-                              <Font size="16.0" />
-                           </font></TextArea>
-                     </children>
-                  </GridPane>
-                  <GridPane>
+                        <Button fx:id="patternButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false"
+                                styleClass="success" text="Search" GridPane.columnIndex="1"/>
+                    </GridPane>
+                </GridPane>
+                <GridPane>
                     <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                     </columnConstraints>
                     <rowConstraints>
-                      <RowConstraints minHeight="10.0" percentHeight="10" prefHeight="30.0" vgrow="SOMETIMES" />
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" percentHeight="25.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" percentHeight="75.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
-                     <children>
-                        <TextArea fx:id="outputArea" editable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" opacity="0.85" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.rowIndex="1">
-                           <font>
-                              <Font size="19.0" />
-                           </font>
-                        </TextArea>
-                        <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Decrypted Output">
-                           <font>
-                              <Font name="Copperplate Gothic Bold" size="22.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </GridPane>
-               </children>
+                    <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="F(X) -&gt; Y">
+                        <font>
+                            <Font name="SansSerif Regular" size="22.0" />
+                        </font>
+                    </Label>
+                    <TextArea fx:id="ruleArea" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" opacity="0.85" prefHeight="200.0" prefWidth="200.0" promptText="a &gt; C;  G &gt; g;" wrapText="true" GridPane.rowIndex="1">
+                        <font>
+                            <Font name="SansSerif Regular" size="20.0" />
+                        </font>
+                    </TextArea>
+                </GridPane>
             </GridPane>
-         </children>
-      </GridPane>
-      <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
-         <children>
-            <GridPane VBox.vgrow="ALWAYS">
-              <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints minHeight="10.0" percentHeight="7" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
-               <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Encrypted Input">
-                     <font>
-                        <Font name="Copperplate Gothic Bold" size="22.0" />
-                     </font>
-                  </Label>
-                  <TextArea fx:id="inputArea" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onInputMethodTextChanged="#analyzeText" opacity="0.85" prefHeight="200.0" prefWidth="200.0" promptText="Input encrypted text..." wrapText="true" GridPane.rowIndex="1">
-                     <font>
-                        <Font size="13.0" />
-                     </font>
-                  </TextArea>
-               </children>
+            <GridPane GridPane.columnIndex="2">
+                <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints minHeight="10.0" percentHeight="10" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" percentHeight="90.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                </rowConstraints>
+                <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Decrypted Output">
+                    <font>
+                        <Font name="SansSerif Regular" size="22.0" />
+                    </font>
+                </Label>
+                <ScrollPane fitToHeight="true" fitToWidth="true" maxWidth="1.7976931348623157E308" prefHeight="200.0"
+                            prefWidth="200.0"
+                            style="-fx-border-color: lightgray; -fx-border-width: 1; -fx-border-radius: 5px;"
+                            GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+                    <TextFlow fx:id="outputArea" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                              prefHeight="200.0" prefWidth="200.0" style="-fx-padding: 5px;"/>
+                </ScrollPane>
             </GridPane>
-         </children>
-      </VBox>
-   </children>
+        </GridPane>
+    </GridPane>
 </GridPane>
