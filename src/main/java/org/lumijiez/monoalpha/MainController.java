@@ -6,6 +6,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.input.Clipboard;
+import javafx.scene.input.ClipboardContent;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 import org.lumijiez.monoalpha.util.CharacterSwitcher;
@@ -45,13 +47,15 @@ public class MainController {
     @FXML
     private CheckBox rainbowCheckbox;
 
+    @FXML
+    private Button copyButton;
+
     private final Map<String, List<String>> dictionaryMap = new HashMap<>();
 
     @FXML
     private void initialize() {
         analyzeText();
         PatternGenerator.loadDictionary(dictionaryMap, patternOutput);
-        //barChart.setStyle("-fx-font-size: 18px;");
         inputArea.textProperty().addListener((observable, oldValue, newValue) -> {
             analyzeText();
             applyChanges(ruleArea.getText());
@@ -61,6 +65,21 @@ public class MainController {
         rainbowCheckbox.selectedProperty().addListener((observable, oldValue, newValue) -> {
             RAINBOW = newValue;
             analyzeText();
+        });
+        copyButton.setOnAction(e -> {
+            StringBuilder contentBuilder = new StringBuilder();
+            outputArea.getChildren().forEach(node -> {
+                if (node instanceof Text) {
+                    contentBuilder.append(((Text) node).getText());
+                }
+            });
+            String textFlowContent = contentBuilder.toString();
+
+
+            Clipboard clipboard = Clipboard.getSystemClipboard();
+            ClipboardContent clipboardContent = new ClipboardContent();
+            clipboardContent.putString(textFlowContent);
+            clipboard.setContent(clipboardContent);
         });
     }
 

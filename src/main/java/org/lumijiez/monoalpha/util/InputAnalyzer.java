@@ -20,9 +20,11 @@ public class InputAnalyzer {
 
     private static Map<String, Double> createEnglishFrequencies() {
         Map<String, Double> frequencies = new HashMap<>();
-        String[] letters = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J",
-                "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T",
-                "U", "V", "W", "X", "Y", "Z", "a", "b", "c", "d",
+        String[] letters = {
+//                "A", "B", "C", "D", "E", "F", "G", "H", "I", "J",
+//                "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T",
+//                "U", "V", "W", "X", "Y", "Z",
+                "a", "b", "c", "d",
                 "e", "f", "g", "h", "i", "j", "k", "l", "m", "n",
                 "o", "p", "q", "r", "s", "t", "u", "v", "w", "x",
                 "y", "z"};
@@ -43,7 +45,7 @@ public class InputAnalyzer {
         Map<Character, Integer> frequencyMap = new HashMap<>();
         text.chars()
                 .filter(Character::isLetter)
-                .forEach(ch -> frequencyMap.merge((char) ch, 1, Integer::sum));
+                .forEach(ch -> frequencyMap.merge(Character.toLowerCase((char) ch), 1, Integer::sum));
         return frequencyMap;
     }
 
